@@ -115,7 +115,7 @@ class SiteController extends Controller {
 			
 		}
 
-		return $this->render ( 'inicio' );
+		return $this->redirect ( ['index'] );
 	}
 
 	
