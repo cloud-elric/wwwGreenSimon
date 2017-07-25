@@ -84,7 +84,7 @@ class SiteController extends Controller {
 			if ($usuario->save ()) {
 		
 
-				return $this->render('premio');
+				return $this->redirect(['gano-perdio', 'token'=>$usuario->txt_token]);
 			}
 
 			
@@ -293,9 +293,13 @@ private function getShortUrl($url) {
 	}
 
 
-	public function actionGanoPerdio(){
+	public function actionGanoPerdio($token=''){
+		$usuario = EntUsuarios::find()->where(["txt_token"=>$token])->one();
 
-		return $this->render("gano-perdio");
+		if($usuario){
+			return $this->render("gano-perdio", ['token'=>$token]);
+		}
+		
 	}
 
 }

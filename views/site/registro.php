@@ -29,21 +29,24 @@ $this->title="Registro";
 						'placeholder'=>'Nombre'
 				] )->label();
 				// Genera un input
-				echo $form->field ( $usuario, 'txt_cp' )->textInput ( [
-						'maxlength' => 5,
-						'placeholder'=>'C.P.'
-				] )->label();
-				// Genera un input
-				echo $form->field ( $usuario, 'num_edad' )->textInput ( [
-						'maxlength' => 2,
-						'placeholder'=>'Edad'
-				] )->label();
-				// Genera un input
 				echo $form->field ( $usuario, 'txt_telefono_celular' )->textInput ( [
 						'type'=>'number',
 						'maxlength' => 10,
 						'placeholder'=>'Teléfono'
 				] )->label();
+				// Genera un input
+				echo $form->field ( $usuario, 'txt_email' )->textInput ( [
+						'placeholder'=>'Email'
+				] )->label();
+				// Genera un input
+				echo $form->field ( $usuario, 'txt_empresa' )->textInput ( [
+						'placeholder'=>'Empresa'
+				] )->label();
+
+				echo $form->field ( $usuario, 'txt_cargo' )->textInput ( [
+						'placeholder'=>'Cargo'
+				] )->label();
+				
 				?>
 				<!---->
 				<div class="terminos-wrapper">

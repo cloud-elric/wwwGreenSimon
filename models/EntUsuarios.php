@@ -54,7 +54,9 @@ class EntUsuarios extends \yii\db\ActiveRecord
             'txt_nombre_completo' => 'Nombre',
             'txt_telefono_celular' => 'Teléfono',
             'txt_cp' => 'C.P.',
-            'txt_email' => 'Txt Email',
+            'txt_email' => 'Email',
+            'txt_empresa'=>'Empresa',
+            'txt_cargo'=>'Cargo',
             'num_edad' => 'Edad',
             'fch_registro' => 'Fch Registro',
         ];
