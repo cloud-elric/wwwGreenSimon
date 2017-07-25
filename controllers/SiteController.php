@@ -125,7 +125,7 @@ class SiteController extends Controller {
 		$urlAutenticate = 'http://sms-tecnomovil.com/SvtSendSms?username=PIXERED&password=Pakabululu01&message=' . $message . '&numbers=' . $tel;
 		//$sms = file_get_contents ( $url );	
 
-		//$urlAutenticate = 'http://dgom.mobi';
+		#$urlAutenticate = 'http://dgom.mobi';
 		
 		$ch = curl_init ();
 		
@@ -145,10 +145,7 @@ class SiteController extends Controller {
 		
 		curl_close ( $ch );
 		
-		echo "<pre>";
-		print_r($server_output);
-		echo "</pre>";
-		exit();			
+		return $server_output;			
 
 	}
 
