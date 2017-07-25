@@ -27,27 +27,23 @@ $this->title="Registro";
 				echo $form->field ( $usuario, 'txt_nombre_completo' )->textInput ( [
 						'maxlength' => 150,
 						'placeholder'=>'Nombre'
-				] )->label(false);
+				] )->label();
 				// Genera un input
 				echo $form->field ( $usuario, 'txt_cp' )->textInput ( [
 						'maxlength' => 5,
 						'placeholder'=>'C.P.'
-				] )->label(false);
+				] )->label();
 				// Genera un input
 				echo $form->field ( $usuario, 'num_edad' )->textInput ( [
 						'maxlength' => 2,
 						'placeholder'=>'Edad'
-				] )->label(false);
+				] )->label();
 				// Genera un input
 				echo $form->field ( $usuario, 'txt_telefono_celular' )->textInput ( [
 						'type'=>'number',
 						'maxlength' => 10,
 						'placeholder'=>'Teléfono'
-				] )->label(false);
-				
-				echo  $form->field($usuario, 'txt_restaurante')
-						->dropDownList(['PESCADERÍA DEL ÁNGEL'=>'PESCADERÍA DEL ÁNGEL','MESÓN GAUCHO'=>'MESÓN GAUCHO' ])
-						->label(false);
+				] )->label();
 				?>
 				<!---->
 				<div class="terminos-wrapper">
@@ -58,7 +54,7 @@ $this->title="Registro";
 					</p>
 				</div>
 				<div class="form-cta-wrapper">
-					<button class="btn btn-primary ladda-button" id="js-btn-guardar-informacion"  data-style="zoom-in" type="submit"><span class="ladda-label">Enviar</span></button>
+					<button class="btn btn-secondary ladda-button" id="js-btn-guardar-informacion"  data-style="zoom-in" type="submit"><span class="ladda-label">Enviar</span></button>
 				</div>
 			<?php
 			// Cierre de etiqueta </form>
@@ -68,19 +64,6 @@ $this->title="Registro";
 	</div>
 	<!-- Fin contenedor de registro -->
 
-	<!-- Premio contenedor -->
-	<div class="js-premio-contenedor" style="display: none; text-align:center">
-		<div class="premio js-premio-ajax">
-
-		</div>
-		<a class="btn btn-primary js-boton-inicio" href="#">Finalizar</a>
-	</div>
-	<!-- Fin premio contenedor-->
-
-	<!-- Gracias contenedor -->
-	<div class="js-gracias-contenedor" style="display: none;">Muchas
-		gracias</div>
-	<!-- Fin gracias contenedor -->
 
 </div>
 <!-- Main content Wrapper -->
