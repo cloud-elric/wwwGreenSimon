@@ -215,8 +215,8 @@ private function getShortUrl($url) {
 	/**
 	 * Descarga un csv con la informacion necesaria
 	 */
-	public function actionDescargarRegistros3289ldksd339ffd3jl(){
-		$usuarios = ViewUsuarioDatos::find()->all();
+	public function actionDescargarRegistros3289lsdfadsd33k9ffd3jl(){
+		$usuarios = EntUsuarios::find()->all();
 
 		$arrayCsv = [ ];
 		$i = 0;
@@ -225,11 +225,11 @@ private function getShortUrl($url) {
 
 			$arrayCsv [$i] ['nombreCompleto'] = $data->txt_nombre_completo;
 			$arrayCsv [$i] ['telefonoCelular'] = $data->txt_telefono_celular;
-			$arrayCsv [$i] ['codigoPostal'] = $data->txt_cp;
-			$arrayCsv [$i] ['numEdad'] = $data->num_edad;
+			$arrayCsv [$i] ['email'] = $data->txt_email;
+			$arrayCsv [$i] ['txtEmpresa'] = $data->txt_empresa;
 			$arrayCsv [$i] ['fchRegistro'] = $data->fch_registro;
-			$arrayCsv [$i] ['aceptoTerminos'] = $data->acepto_terminos;
-			$arrayCsv [$i] ['premio'] = $data->txt_premio;
+			$arrayCsv [$i] ['cargo'] = $data->txt_cargo;
+			$arrayCsv [$i] ['gano'] = $data->b_gano?'Si':'No';
 			
 
 			$i++;
@@ -255,11 +255,11 @@ private function getShortUrl($url) {
 		fputcsv ( $df, [
 				'Nombre completo',
 				'Telefono',
-				'C.P.',
-				'Edad',
+				'Email',
+				'Empresa',
 				'Fecha registro',
-				'Acepto terminos',
-				'Premio'
+				'Cargo',
+				'Gano?'
 		]
 		 );
 
