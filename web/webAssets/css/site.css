@@ -455,6 +455,10 @@ body {
     margin-top: 20px;
     width: 450px;
     background-color: transparent; }
+    @media screen and (max-width: 768px) {
+      .container .form-wrapper {
+        width: 90%;
+        margin: 0 auto; } }
     .container .form-wrapper label {
       color: #FFF;
       width: 26%;
@@ -463,6 +467,10 @@ body {
       margin-right: 10px;
       font-size: 1.2em;
       font-weight: 400; }
+      @media screen and (max-width: 768px) {
+        .container .form-wrapper label {
+          width: 100%;
+          text-align: left; } }
     .container .form-wrapper input {
       outline: 0;
       box-sizing: border-box;
@@ -478,6 +486,9 @@ body {
       font-size: 1.1em;
       background-color: #FFF;
       color: #51C100; }
+      @media screen and (max-width: 768px) {
+        .container .form-wrapper input {
+          width: 100%; } }
     .container .form-wrapper input::placeholder {
       opacity: .7; }
     .container .form-wrapper .help-block {
@@ -543,8 +554,8 @@ body {
 .container-premio {
   flex-direction: column;
   background-image: url("../images/bkgd.png");
-  background-position: top right;
-  background-repeat: no-repeat; }
+  background-size: cover;
+  background-position: center; }
   .container-ribbon a,
   .container-premio a {
     margin-top: 100px; }

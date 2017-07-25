@@ -75,6 +75,9 @@ body
 		margin-top: 20px
 		width: 450px
 		background-color: transparent
+		+respond-to(xs)
+			width: 90%
+			margin: 0 auto
 		label
 			color: $white
 			width: 26%
@@ -84,6 +87,9 @@ body
 			//letter-spacing: 1px
 			font-size: 1.2em
 			font-weight: 400
+			+respond-to(xs)
+				width: 100%
+				text-align: left
 		input
 			outline: 0
 			box-sizing: border-box
@@ -99,6 +105,8 @@ body
 			font-size: 1.1em
 			background-color: $white
 			color: $secondary
+			+respond-to(xs)
+				width: 100%
 		input::placeholder
 				opacity: .7
 		.help-block
@@ -173,8 +181,8 @@ body
 	flex-direction: column
 	background:
 		image: url("../images/bkgd.png")
-		position: top right
-		repeat: no-repeat
+		size: cover
+		position: center
 
 	a
 		margin-top: 100px
