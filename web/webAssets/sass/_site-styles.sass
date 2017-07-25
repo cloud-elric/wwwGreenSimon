@@ -65,6 +65,7 @@ body
 	display: flex
 	align-items: center
 	justify-content: center
+	flex-flow: column
 	background-color: transparent
 	width: 100%
 	height: 100vh
@@ -72,34 +73,44 @@ body
 
 	.form-wrapper
 		margin-top: 20px
-		width: 300px
+		width: 450px
 		background-color: transparent
+		label
+			color: $white
+			width: 26%
+			display: inline-block
+			text-align: right
+			margin-right: 10px
+			//letter-spacing: 1px
+			font-size: 1.2em
+			font-weight: 400
 		input
 			outline: 0
 			box-sizing: border-box
-			display: block
-			height: 50px
-			margin: 15px 0
+			display: inline-block
+			height: 40px
+			margin: 8px 0
 			border: 2px solid $primary
-			width: 100%
-			padding: 0 15px
+			width: 70%
+			padding: 0 16px
 			border-radius: 3px
 			font-family: $f-base
 			font-weight: $bold
+			font-size: 1.1em
 			background-color: $white
 			color: $secondary
 		input::placeholder
 				opacity: .7
 		.help-block
 			font-size: .8em
-			text-indent: 10px
-			color: $secondary
+			text-indent: 140px
+			color: $accent
 
 		.terminos-wrapper
 			margin: 20px 0
 			display: flex
 			align-items: center
-			justify-content: flex-start
+			justify-content: center
 			.check-box
 				display: inline-block
 				height: 20px
@@ -114,10 +125,11 @@ body
 				width: auto
 				margin: 0
 				padding: 0
-				font-size: .75em
+				font-size: .95em
 
 		.form-cta-wrapper
-			text-align: right
+			margin-top: 10px
+			text-align: center
 			a
 				margin: 0 auto
 
@@ -126,7 +138,7 @@ body
 	/* Para la pantalla de premio */
 
 	.premio
-		width: 500px
+		width: 600px
 		text-align: center
 		+respond-to(xs)
 			width: 90%
@@ -141,12 +153,26 @@ body
 
 		p
 			margin-bottom: 20px
+		.gano-btn,
+		.perdio-btn
+			width: 253px
+			height: 253px
+			display: inline-block
+			margin: 0 20px
+			background:
+				image: url("../images/gano.png")
+			h3
+				color: $white
+				margin-top: 100px
+		.perdio-btn
+			background:
+				image: url("../images/perdio.png")
 
 .container-ribbon,
 .container-premio
 	flex-direction: column
 	background:
-		image: url("../images/ribbon.png")
+		image: url("../images/bkgd.png")
 		position: top right
 		repeat: no-repeat
 
@@ -166,7 +192,7 @@ body
 	justify-content: center
 	align-items: center
 	background:
-		//image: url("../images/web-bkgd.jpg")
+		image: url("../images/bkgd.png")
 		position: center
 		repeat: no-repeat
 		size: cover
@@ -177,7 +203,7 @@ body
 
 	.selecciona-tarjeta-wrapper
 		text-align: center
-		margin-top: 300px
+		margin-top: 100px
 		//margin-right: 70px
 		//margin-bottom: 150px
 		// background-color: rgba(216, 216, 216, 0.3)
@@ -203,11 +229,11 @@ body
 
 
 .logo-evento
-	position: fixed
-	top: 0%
-	left: 0%
+	position: relative
 	z-index: 1
-	//width: 60%
 	+respond-to(xs)
-		width: 90%
-		//margin-left: -45%
+		width: 150px
+
+
+.message
+	color: $white
