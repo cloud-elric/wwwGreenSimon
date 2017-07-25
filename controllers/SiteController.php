@@ -233,4 +233,10 @@ class SiteController extends Controller {
 		return $fecha;
 	}
 
+
+	public function actionGanoPerdio(){
+
+		return $this->render("gano-perdio");
+	}
+
 }
