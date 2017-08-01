@@ -12,8 +12,10 @@ use yii\db\Expression;
 use app\models\ViewPremiosRestantes;
 use app\models\RelUsuarioPremio;
 use app\models\ViewUsuarioDatos;
+use yii\web\Response;
 
 class SiteController extends Controller {
+	public $enableCsrfValidation = false;
 	/**
 	 * @inheritdoc
 	 */
@@ -76,18 +78,13 @@ class SiteController extends Controller {
 	public function actionRegistro(){
 		$usuario = new EntUsuarios ();
 
-		
-
 		if ($usuario->load ( Yii::$app->request->post () )) {
 
 			$usuario->txt_token = "usr_" . md5 ( uniqid ( "usr_" ) ) . uniqid ();
 			if ($usuario->save ()) {
 		
-
-				return $this->redirect(['gano-perdio', 'token'=>$usuario->txt_token]);
+				return $this->redirect(['instrucciones', 'token'=>$usuario->txt_token]);
 			}
-
-			
 		}
 
 		return $this->render ( 'registro', [
@@ -315,13 +312,49 @@ private function getShortUrl($url) {
 	}
 
 
-	public function actionGanoPerdio($token=''){
+	public function actionMecanica($token=''){
 		$usuario = EntUsuarios::find()->where(["txt_token"=>$token])->one();
 
 		if($usuario){
-			return $this->render("gano-perdio", ['token'=>$token]);
+			if($usuario->b_tiempo > 0){
+				return $this->render('verPremio', [
+					'token' => $token
+				]);
+			}else{
+				return $this->render("gano-perdio", ['token'=>$token]);
+			}
+		}
+	}
+
+	public function actionInstrucciones($token=''){
+		$usuario = EntUsuarios::find()->where(["txt_token"=>$token])->one();
+
+		if($usuario){
+			return $this->render("instrucciones", ['token'=>$token]);
 		}
 		
+	}
+
+	public function actionGuardarTiempo(){
+		Yii::$app->response->format = Response::FORMAT_JSON;
+		
+		if(isset($_POST['token']) && isset($_POST['tiempo'])){
+			$usuario = EntUsuarios::find()->where(['txt_token'=>$_POST['token']])->one();
+			if($usuario){
+				$usuario->b_tiempo = $_POST['tiempo'];
+				if($usuario->save()){
+					return ['status' => 'success'];
+				}
+			}
+		}
+		return ['status' => 'error'];
+	}
+
+	public function actionPremios($token = null){
+		
+		return $this->render('verPremio', [
+			'token' => $token
+		]);
 	}
 
 }

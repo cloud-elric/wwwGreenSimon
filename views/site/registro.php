@@ -35,20 +35,16 @@ $this->title="Registro";
 						'placeholder'=>'Teléfono'
 				] )->label();
 				// Genera un input
-				echo $form->field ( $usuario, 'txt_email' )->textInput ( [
-						'placeholder'=>'Email'
+				echo $form->field ( $usuario, 'txt_cp' )->textInput ( [
+						'placeholder'=>'Codigo postal'
 				] )->label();
 				// Genera un input
-				echo $form->field ( $usuario, 'txt_empresa' )->textInput ( [
-						'placeholder'=>'Empresa'
+				echo $form->field ( $usuario, 'num_edad' )->textInput ( [
+						'placeholder'=>'Edad'
 				] )->label();
 
-				echo $form->field ( $usuario, 'txt_cargo' )->textInput ( [
-						'placeholder'=>'Cargo'
-				] )->label();
-				
 				?>
-				<!---->
+				<!--Terminos y condiciones-->
 				<div class="terminos-wrapper">
 					<div class="check-box js-check-box-aviso"></div>
 					<p class="message">
@@ -56,6 +52,17 @@ $this->title="Registro";
 							de privacidad</span>
 					</p>
 				</div>
+
+				<?php
+				echo $form->field ( $usuario, 'txt_codigo' )->textInput ( [
+						'placeholder'=>'Codigo'
+				] )->label();
+
+				echo $form->field ( $usuario, 'txt_num_empleado' )->textInput ( [
+						'placeholder'=>'Numero de empleado'
+				] )->label();
+				?>
+		
 				<div class="form-cta-wrapper">
 					<button class="btn btn-secondary ladda-button" id="js-btn-guardar-informacion"  data-style="zoom-in" type="submit"><span class="ladda-label">Enviar</span></button>
 				</div>
